@@ -18,6 +18,9 @@
 ![캡처](https://github.com/smHan22/opencv_ch12-1/assets/90818408/9dab093d-5e79-4a8c-bec1-37c227d2ab29)
 
 
+
+
+
 실습과제 2)
 
 -polygon.bmp 영상파일에서 레이블링을 수행하고 다음 처럼 콘솔창에 아래와 같은 정보를 출력하고 영상원본에 바운딩 박스와 레이블값을 그려주는 코드를 작성하시오. color는 무게중심 좌표에서 원본 영상의 컬러를 출력할 것.
@@ -35,6 +38,9 @@
 ![2](https://github.com/smHan22/opencv_ch12-1/assets/90818408/969029af-f2e9-4272-a4cd-2865b30be30c)
 
 
+
+
+
 실습과제 3)
 
 -polygon.bmp 영상파일에서 레이블링을 수행하고 각 객체의 무게중심을 직접 계산하여 아래 처럼 화면에 출력하시오.
@@ -48,6 +54,9 @@
 ● 무게 중심 좌표 출력
 
 ![3](https://github.com/smHan22/opencv_ch12-1/assets/90818408/acc398d3-b9e5-4f70-bca6-6fee6a12c806)
+
+
+
 
 
 실습과제 4)
