@@ -1,7 +1,7 @@
-// ÄÄÇ»ÅÍ ºñÀü ch 12-1
+// ì»´í“¨í„° ë¹„ì „ ch 12-1
 
-// ½Ç½À°úÁ¦ 1
-
+// ì‹¤ìŠµê³¼ì œ 1
+/*
 #include <iostream>
 using namespace std;
 #include <opencv2/opencv.hpp>
@@ -34,27 +34,27 @@ int main()
 			maxIdx = i;
 		}
 	}
-	cout << "¸éÀûÀÌ ÃÖ´ëÀÎ °´Ã¼ÀÇ ·¹ÀÌºí: " << maxIdx << endl;
+	cout << "ë©´ì ì´ ìµœëŒ€ì¸ ê°ì²´ì˜ ë ˆì´ë¸”: " << maxIdx << endl;
 	if (maxIdx != -1) {
 		Point maxCentroid((int)centroids.at<double>(maxIdx, 0), (int)centroids.at<double>(maxIdx, 1));
-		cout << "¹«°ÔÁß½É (x, y): " << maxCentroid.x << "\t" << maxCentroid.y << endl;
+		cout << "ë¬´ê²Œì¤‘ì‹¬ (x, y): " << maxCentroid.x << "\t" << maxCentroid.y << endl;
 		int* p = stats.ptr<int>(maxIdx);
-		rectangle(src, Rect(p[0], p[1], p[2], p[3]), Scalar(0, 0, 255)); // »¡°£»ö ¼±À¸·Î °¡Àå Å« µµÇü ¹Ù¿îµù ¹Ú½º ±×¸®±â
+		rectangle(src, Rect(p[0], p[1], p[2], p[3]), Scalar(0, 0, 255)); // ë¹¨ê°„ìƒ‰ ì„ ìœ¼ë¡œ ê°€ì¥ í° ë„í˜• ë°”ìš´ë”© ë°•ìŠ¤ ê·¸ë¦¬ê¸°
 	}
-	cout << "¸éÀûÀÌ ÃÖ¼ÒÀÎ °´Ã¼ÀÇ ·¹ÀÌºí: " << minIdx << endl;
+	cout << "ë©´ì ì´ ìµœì†Œì¸ ê°ì²´ì˜ ë ˆì´ë¸”: " << minIdx << endl;
 	if (minIdx != -1) {
 		Point minCentroid((int)centroids.at<double>(minIdx, 0), (int)centroids.at<double>(minIdx, 1));
-		cout << "¹«°ÔÁß½É (x, y): " << minCentroid.x << "\t" << minCentroid.y << endl;
+		cout << "ë¬´ê²Œì¤‘ì‹¬ (x, y): " << minCentroid.x << "\t" << minCentroid.y << endl;
 		int* p = stats.ptr<int>(minIdx);
-		rectangle(src, Rect(p[0], p[1], p[2], p[3]), Scalar(255, 0, 0)); // ÆÄ¶õ»ö ¼±À¸·Î °¡Àå ÀÛÀº µµÇü ¹Ù¿îµù ¹Ú½º ±×¸®±â
+		rectangle(src, Rect(p[0], p[1], p[2], p[3]), Scalar(255, 0, 0)); // íŒŒë€ìƒ‰ ì„ ìœ¼ë¡œ ê°€ì¥ ì‘ì€ ë„í˜• ë°”ìš´ë”© ë°•ìŠ¤ ê·¸ë¦¬ê¸°
 	}
 	imshow("src", src);
 	waitKey();
 	destroyAllWindows();
 	return 0;
-}
+}*/
 
-// ½Ç½À°úÁ¦ 2
+// ì‹¤ìŠµê³¼ì œ 2
 /*
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -72,7 +72,7 @@ int main() {
 	Mat  labels, stats, centroids;
 	int cnt = connectedComponentsWithStats(bin, labels, stats, centroids);
 
-	cout << "°¹¼ö" << cnt << endl;
+	cout << "ê°¯ìˆ˜" << cnt << endl;
 	cout << "label	x	y	width	height	area	color [B, G, R]" << endl;
 
 	for (int i = 1; i < cnt; i++) {
@@ -90,7 +90,7 @@ int main() {
 	return 0;
 }*/
 
-// ½Ç½À°úÁ¦ 3
+// ì‹¤ìŠµê³¼ì œ 3
 /*
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -119,12 +119,12 @@ int main() {
 				}
 			}
 		}
-		cout << i << "¹ø °´Ã¼ÀÇ ¹«°ÔÁß½É: ( " << xsum / count << ", " << ysum / count << ")" << endl;
+		cout << i << "ë²ˆ ê°ì²´ì˜ ë¬´ê²Œì¤‘ì‹¬: ( " << xsum / count << ", " << ysum / count << ")" << endl;
 	}
 	return 0;
 }*/
 
-// ½Ç½À°úÁ¦ 4
+// ì‹¤ìŠµê³¼ì œ 4
 /*
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -141,11 +141,11 @@ int main() {
 	blur(gray, blurr, Size(5, 5));
 	Sobel(blurr, dx, CV_32FC1, 1, 0);
 	dx.convertTo(dx, CV_8UC1);
-	imshow("xÃà¹æÇâ ¼Òº§", dx);
+	imshow("xì¶•ë°©í–¥ ì†Œë²¨", dx);
 
 	Mat bin;
 	threshold(dx, bin, 100, 255, THRESH_BINARY);
-	imshow("ÀÌÁøÈ­ ¿µ»ó", bin);
+	imshow("ì´ì§„í™” ì˜ìƒ", bin);
 
 	Mat close;
 	morphologyEx(bin, close, MORPH_CLOSE, Mat(Size(21, 5), CV_8UC1));
@@ -153,14 +153,14 @@ int main() {
 	Mat labels, stats, centroids;
 	int cnt = connectedComponentsWithStats(close, labels, stats, centroids);
 
-	// »¡°£»öÀ¸·Î ¹Ù¿îµù ¹Ú½º ±×¸®±â
+	// ë¹¨ê°„ìƒ‰ìœ¼ë¡œ ë°”ìš´ë”© ë°•ìŠ¤ ê·¸ë¦¬ê¸°
 	for (int i = 1; i < cnt; ++i) {
-		int area = stats.at<int>(i, 4); // CC_STAT_AREA¿¡ ÇØ´çÇÏ´Â ¿­
-		if (area > 1000) { // ¹øÈ£ÆÇÀÌ¶ó°í °¡Á¤ÇÏ°í ³Ê¹« ÀÛÀº ¿µ¿ªÀº ¹«½Ã
-			int x = stats.at<int>(i, 0); // CC_STAT_LEFT¿¡ ÇØ´çÇÏ´Â ¿­
-			int y = stats.at<int>(i, 1); // CC_STAT_TOP¿¡ ÇØ´çÇÏ´Â ¿­
-			int width = stats.at<int>(i, 2); // CC_STAT_WIDTH¿¡ ÇØ´çÇÏ´Â ¿­
-			int height = stats.at<int>(i, 3); // CC_STAT_HEIGHT¿¡ ÇØ´çÇÏ´Â ¿­
+		int area = stats.at<int>(i, 4); // CC_STAT_AREAì— í•´ë‹¹í•˜ëŠ” ì—´
+		if (area > 1000) { // ë²ˆí˜¸íŒì´ë¼ê³  ê°€ì •í•˜ê³  ë„ˆë¬´ ì‘ì€ ì˜ì—­ì€ ë¬´ì‹œ
+			int x = stats.at<int>(i, 0); // CC_STAT_LEFTì— í•´ë‹¹í•˜ëŠ” ì—´
+			int y = stats.at<int>(i, 1); // CC_STAT_TOPì— í•´ë‹¹í•˜ëŠ” ì—´
+			int width = stats.at<int>(i, 2); // CC_STAT_WIDTHì— í•´ë‹¹í•˜ëŠ” ì—´
+			int height = stats.at<int>(i, 3); // CC_STAT_HEIGHTì— í•´ë‹¹í•˜ëŠ” ì—´
 			rectangle(src, Point(x, y), Point(x + width, y + height), Scalar(0, 0, 255), 2);
 		}
 	}
