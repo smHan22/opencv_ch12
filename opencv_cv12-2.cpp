@@ -1,4 +1,4 @@
-// ½Ç½À°úÁ¦ 1
+// ì‹¤ìŠµê³¼ì œ 1
 #include <iostream>
 using namespace std;
 #include <opencv2/opencv.hpp>
@@ -24,7 +24,7 @@ int main(void)
 	return 0;
 }
 
-// ½Ç½À°úÁ¦ 2
+// ì‹¤ìŠµê³¼ì œ 2
 #include <iostream>
 #include <opencv2/opencv.hpp>
 using namespace std;
@@ -52,7 +52,7 @@ void labeling_basic() {
 	cout << "number of labesl: " << cnt << endl;
 }
 
-// ½Ç½À°úÁ¦ 3
+// ì‹¤ìŠµê³¼ì œ 3
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
@@ -76,10 +76,10 @@ int main() {
 	Scalar c(0, 0, 255);
 	for (int i = 0; i < contours.size(); i++) {
 		for (int j = 0; j < contours[i].size() - 1; j++) {
-			// i¹øÂ° À±°û¼±ÀÇ j¹øÂ° Á¡¿¡¼­ ½ÃÀÛÇÏ¿© j+1 ¹øÂ° Á¡±îÁö ¿¬°á. ¼øÂ÷ÀûÀ¸·Î ¿¬°áÇÏ¿© À±°û¼±À» ±×¸®·Á°í ÇÔ.
+			// ië²ˆì§¸ ìœ¤ê³½ì„ ì˜ jë²ˆì§¸ ì ì—ì„œ ì‹œìž‘í•˜ì—¬ j+1 ë²ˆì§¸ ì ê¹Œì§€ ì—°ê²°. ìˆœì°¨ì ìœ¼ë¡œ ì—°ê²°í•˜ì—¬ ìœ¤ê³½ì„ ì„ ê·¸ë¦¬ë ¤ê³  í•¨.
 			line(src, contours[i][j], contours[i][j + 1], c, 2);
 		}
-		// contours[i]´Â i¹øÂ° À±°û¼±, contours[i].size() - 1Àº À±°û¼±ÀÇ ¸¶Áö¸· Á¡. contours[i][0]Àº ÇØ´ç À±°û¼±ÀÇ Ã¹¹øÂ° Á¡
+		// contours[i]ëŠ” ië²ˆì§¸ ìœ¤ê³½ì„ , contours[i].size() - 1ì€ ìœ¤ê³½ì„ ì˜ ë§ˆì§€ë§‰ ì . contours[i][0]ì€ í•´ë‹¹ ìœ¤ê³½ì„ ì˜ ì²«ë²ˆì§¸ ì 
 		line(src, contours[i][contours[i].size() - 1], contours[i][0], c, 2);
 	}
 
@@ -88,7 +88,7 @@ int main() {
 	return 0;
 }
 
-// ½Ç½À°úÁ¦ 4
+// ì‹¤ìŠµê³¼ì œ 4
 #include <iostream>
 #include <opencv2/opencv.hpp>
 
@@ -109,7 +109,7 @@ int main() {
 	findContours(binary, contours, RETR_TREE, CHAIN_APPROX_NONE);
 
 	for (int i = 0; i < contours.size(); i++) {
-		cout << i << "¹øÂ° ¿Ü°û¼± ±æÀÌ: " << contours[i].size() << endl;
+		cout << i << "ë²ˆì§¸ ì™¸ê³½ì„  ê¸¸ì´: " << contours[i].size() << endl;
 	}
 	int cnt = 0;
 	int maxlong = contours[0].size();
@@ -120,13 +120,13 @@ int main() {
 		}
 	}
 	drawContours(src, contours, cnt, Scalar(0, 0, 255), 2);
-	cout << "±æÀÌ°¡ ÃÖ´ëÀÎ ¿Ü°û¼±: " << cnt << "¹ø¤Š ±æÀÌ´Â: " << maxlong << endl;
+	cout << "ê¸¸ì´ê°€ ìµœëŒ€ì¸ ì™¸ê³½ì„ : " << cnt << "ë²ˆÂŠ ê¸¸ì´ëŠ”: " << maxlong << endl;
 	imshow("src", src);
 	waitKey();
 	return 0;
 }
 
-// ½Ç½À°úÁ¦ 5
+// ì‹¤ìŠµê³¼ì œ 5
 #include <iostream>
 #include <opencv2/opencv.hpp>
 using namespace std;
@@ -153,11 +153,11 @@ int main() {
 	for (int i = 0; i < contours.size(); i++) {
 		if (x[i] > (stats.at<int>(i, 0) + stats.at<int>(i, 2)) / 2) {
 			drawContours(src, contours, i, Scalar(255, 0, 0), 2);
-			cout << i << "¹øÂ° ¹®ÀÚ(ÆÄ¶õ»ö): ¿ÞÂÊÀ¸·Î ¿­¸²" << endl;
+			cout << i << "ë²ˆì§¸ ë¬¸ìž(íŒŒëž€ìƒ‰): ì™¼ìª½ìœ¼ë¡œ ì—´ë¦¼" << endl;
 		}
 		else if (x[i] < (stats.at<int>(i, 0) + stats.at<int>(i, 2)) / 2) {
 			drawContours(src, contours, i, Scalar(0, 0, 255), 2);
-			cout << i << "¹øÂ° ¹®ÀÚ(»¡°£»ö): ¿À¸¥ÂÊÀ¸·Î ¿­¸²" << endl;
+			cout << i << "ë²ˆì§¸ ë¬¸ìž(ë¹¨ê°„ìƒ‰): ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì—´ë¦¼" << endl;
 		}
 	}
 	imshow("src", src);
