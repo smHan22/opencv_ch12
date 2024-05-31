@@ -78,7 +78,7 @@ opencv_ch12-1 레이블링과 외곽선 검출
 ![4](https://github.com/smHan22/opencv_ch12-1/assets/90818408/795dcc75-a6ce-4018-a767-0d2d08b2c1ca)
 
 
-opencv_ch12-2 레이블링과 외곽선 검출 (외곽선 검출과 그리기)
+opencv_ch12-2 레이블링과 외곽선 검출
 
 실습과제 1)
 
@@ -178,4 +178,81 @@ opencv_ch12-2 레이블링과 외곽선 검출 (외곽선 검출과 그리기)
 <img width="365" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/74175642-b1fd-4844-927c-2b4d49bdf276">
 
 <img width="554" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/72b06e35-c7f0-437d-8916-23b21826850e">
+
+opencv_ch12-3 레이블링과 외곽선 검출
+
+실습과제 1)
+
+● 이미지 그레이스케일, 이진화 변환
+
+● findContours는 이진화된 이미지에서 외곽선을 검출
+
+● boundingRect는 외곽선을 포함하는 최소 직사각형을 계산
+
+● minAreaRect는 외곽선을 포함한느 최소 면적의 회전 직사각형을 계산, points 메서드는 회전 직사각형의 네 점을 rect_points 배열에 저장
+
+● minEnclosingCircle은 외곽선을 포함하는 최소 원을 계산하여 중심과 반지름을 반환
+
+<img width="361" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/0b12902b-f60f-4d3c-9dc8-70028cc06496">
+
+<img width="277" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/ca780918-fa4b-4647-885a-914376c18ff7">
+
+실습과제 2)
+
+● 이미지 그레이스케일, 이진화 변환
+
+● findContours는 이진화된 이미지에서 외곽선을 검출
+
+● 첫 번째 반복 루프에서 minAreaRect는 외곽선을 포함하는 최소 면적의 회전 직사각형을 계산
+
+● getRotationMatrix2D는 중심점을 기준으로 주어진 각도 angle만큼의 회전 변환 행렬을 생성, 1.0은 스케일 값을 의미하며, 크기 변경 없이 회전만 수행
+
+● warpAffine는 주어진 회전 변환 행렬 rot_mat을 사용하여 원본 이미지를 회전시겨 rotated에 저장
+
+<img width="370" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/008dc709-8336-47cc-812e-7cc9aeee5096">
+
+<img width="1039" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/296da031-392e-4bd3-8299-fe0e61139c8f">
+
+실습과제 3)
+
+● 이미지 그레이스케일 및 이진화 변환
+
+● findContours는 이진화된 이미지에서 외곽선 검출
+
+● arcLength는 외곽선의 둘레를 계산, true는 외관선이 닫혀 있음을 나타냄
+
+● approxPolyDP는 외곽선을 다각형으로 근사화. 0.04 * peri는 근사화 정밀도를 결정하는 매개변수
+
+● approx.size()를 통해 다각형의 꼭짓점 수를 확인하여 도형 구분, 그 외의 경우 contourArea로 외곽선의 면적을 계산하고, arcLength로 둘레를 다시 계산한 후, 원형도를 계산.
+
+● 값이 0.85 이상이면 원으로 간주
+
+<img width="371" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/9a062edd-8dfa-4166-9d10-55aa8bf34f93">
+
+<img width="551" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/ed0c57a5-c41e-480a-b0e6-89bc5c4490fc">
+
+실습과제 4)
+
+● 이미지 그레이스케일, 이진화 변환
+
+● findContours는 이진화된 이미지에서 외곽선을 검출
+
+● arcLength는 외곽선의 둘레를 계산. true는 외곽선이 닫혀 있음을 나타냄. approxPolyDP는 외곽선을 다각형으로 근사화. 0.04 * peri는 근사화 정밀도를 결정하는 매개변수
+
+● approx.size()를 통해 다각형의 꼭짓점 수를 확인하여 도형 구분
+
+● 각 도형의 경우, 둘레 길이와 면적을 계산하여 각 변수에 저장. 그 외의 경우, 원형도를 계산하여 원으로 분류
+
+<img width="370" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/d6da43b1-478d-49ab-af1c-3ec75776b5e7">
+
+<img width="557" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/9471177b-5bff-4996-b22e-a8885af8ebaa">
+
+실습과제 5)
+
+● 
+
+
+
+
+
 
