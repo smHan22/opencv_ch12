@@ -92,9 +92,10 @@ opencv_ch12-2 레이블링과 외곽선 검출 (외곽선 검출과 그리기)
 
 ● 반복문에서는 찾은 윤곽선을 확인하면서 각 윤곽선을 랜덤한 색상으로 그려줌
 
-image
+<img width="609" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/8d18e0fa-3c64-4be8-845b-1917cb40f7d9">
 
-image
+<img width="508" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/599c4da5-6086-4e1c-a8ff-9cccf6072fb1">
+
 
 실습과제 2)
 
@@ -108,9 +109,10 @@ image
 
 ● 첫 번째 반복문에서 모든 윤곽선에 대해 반복하고, 중첩 반복문에서는 현재 윤곽선을 이루는 점들의 좌표를 출력
 
-image
+<img width="629" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/4e6b27ad-6b1c-4371-adb5-f4e11c0d6faa">
 
-image
+<img width="654" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/6bf3cff0-c58c-405e-b7f3-dddcf95aca3b">
+
 
 실습과제 3)
 
@@ -130,9 +132,10 @@ image
 
 ● 두 번째 line 함수의 contours[i]는 i번째 윤곽선, contours[i].size() - 1은 윤곽선의 마지막 점. contours[i][0]은 해당 윤곽선의 첫 번째 점.
 
-image
+<img width="626" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/df4ca8ba-fcd0-43ea-9ed6-024506692572">
 
-image
+<img width="323" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/5abcbba2-aeb0-4c1f-9b25-ceaa44f460e0">
+
 
 실습과제 4)
 
@@ -156,9 +159,10 @@ image
 
 ● 마지막점과 첫 번째 점을 연결하여 윤곽선을 완전히 그림
 
-image
+<img width="634" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/aa11e736-6e89-4268-b672-52a70792faf0">
 
-image
+<img width="326" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/e016a3ca-5247-46e1-972b-a2b7c66f40dd">
+
 
 실습과제 5)
 
