@@ -143,29 +143,39 @@ opencv_ch12-2 레이블링과 외곽선 검출 (외곽선 검출과 그리기)
 
 -외곽선의 길이는 외곽선을 구성하는 점의 개수로 정의한다.
 
-● int maxLength는 가장 긴 윤곽선의 길이를 저장하는 변수, maxIndex는 가장 긴 윤곽선의 인덱스를 저장하는 변수. (-1로 초기화 한 이유는 최대 길이 윤곽선을 찾지 못한 경우를 나타내기 위해)
+● 이미지를 그레이스케일, 이진화로 변환
 
-● 반복문에서 contours 벡터의 크기만큼 반복하고, length라는 변수에 contours[i].size() 해당 윤곽선을 이루는 점들의 개수를 저장
+● findContours는 이진화된 이미지에서 외곽선을 검출
 
-● 조건문에서는 현재 윤곽선의 길이가 최대 길이보다 큰지 확인하며, 현재 윤곽선의 길이가 최대 길이보다 크다면, 최대 길이를 현재 윤곽선의 길이로 업데이트
+● 첫 번째 반복 루프에서는 외곽선을 반복하며, 포인트 수를 출력
 
-● maxIndex = i는 현재 윤곽선의 인덱스를 maxIndex에 저장.
+● maxlong 변수는 첫 번째 외곽선의 크기로 초기화
 
-● maxIndex != -1은 윤곽선을 찾은 경우에만 실행
+● 두 번째 반복 루프에서는 각 외곽선을 반복하며, 가장 긴 외곽선을 찾음.
 
-● 가장 긴 윤곽선을 이루는 점들에 대해 반복하며 윤곽선을 이루는 점들의 개수만큼 반복하되, 마지막 점은 첫 번째 점과 연결하기 위해 -1을 해줌
-
-● 각 점을 연결하여 윤곽선을 그림. contours[maxIndex][j]는 현재 점이며, contours[maxIndex][j+1]은 다음 점이다
-
-● 마지막점과 첫 번째 점을 연결하여 윤곽선을 완전히 그림
+● drawContours는 가장 긴 외곽선을 원본 이미지에 빨간색으로 그림
 
 <img width="634" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/aa11e736-6e89-4268-b672-52a70792faf0">
 
-<img width="326" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/e016a3ca-5247-46e1-972b-a2b7c66f40dd">
+<img width="587" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/512723a8-3a38-46b4-902f-b4e5bd6e359b">
+
 
 
 실습과제 5)
 
 -char_c.png 영상에서 열려있는 방향을 구하시오. 열린방향이 왼쪽이면 외곽선을 파란색으로 그려주고 열린방향이 오른쪽이면 외곽선을 빨간색으로 그리시오.
 
+● 이미지를 그레이스케일, 이진화로 변환
+
+● findContours로 이진화된 이미지에서 외곽선을 검출
+
+● connectedComponentsWithStats로 이진화된 이미지에서 연결된 구성 요소를 찾고 각 구성 요소의 통계 및 중심점을 계산
+
+● 각 구성 요소의 중심점 x좌표를 centroids에서 읽어와 x벡터에 추가
+
+● 중심점 x[i]가 해당 외곽선의 바운딩 박스의 중앙 x좌표보다 큰 경우 파란색으로 그리고, 작은 경우에는 빨간색으로 그림
+
+<img width="365" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/74175642-b1fd-4844-927c-2b4d49bdf276">
+
+<img width="554" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/72b06e35-c7f0-437d-8916-23b21826850e">
 
