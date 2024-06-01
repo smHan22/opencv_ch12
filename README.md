@@ -179,7 +179,7 @@
 
 <img width="554" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/72b06e35-c7f0-437d-8916-23b21826850e">
 
-opencv_ch12-3 레이블링과 외곽선 검출
+# opencv_ch12-3 레이블링과 외곽선 검출
 
 실습과제 1)
 
