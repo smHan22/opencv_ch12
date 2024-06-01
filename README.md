@@ -1,4 +1,4 @@
-opencv_ch12-1 레이블링과 외곽선 검출
+# opencv_ch12-1 레이블링과 외곽선 검출
 
 실습과제 1)
 
@@ -78,7 +78,7 @@ opencv_ch12-1 레이블링과 외곽선 검출
 ![4](https://github.com/smHan22/opencv_ch12-1/assets/90818408/795dcc75-a6ce-4018-a767-0d2d08b2c1ca)
 
 
-opencv_ch12-2 레이블링과 외곽선 검출
+# opencv_ch12-2 레이블링과 외곽선 검출
 
 실습과제 1)
 
