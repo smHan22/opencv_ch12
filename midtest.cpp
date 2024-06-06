@@ -1,4 +1,4 @@
-// ½Ç½À°úÁ¦ 1
+// ì‹¤ìŠµê³¼ì œ 1
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -42,7 +42,7 @@ int main() {
     return 0;
 }
 
-// ½Ç½À°úÁ¦ 2
+// ì‹¤ìŠµê³¼ì œ 2
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -66,8 +66,8 @@ int main() {
     findContours(bin, contours, RETR_EXTERNAL, CHAIN_APPROX_NONE);
 
     for (int i = 0; i < contours.size(); i++) {
-        RotatedRect rect = minAreaRect(contours[i]);        // È¸ÀüµÈ °´Ã¼ Ã£À½
-        float angle = rect.angle;       // Rotated°´Ã¼ÀÇ È¸Àü °¢µµ ¾Ë¾Æ³¿
+        RotatedRect rect = minAreaRect(contours[i]);        // íšŒì „ëœ ê°ì²´ ì°¾ìŒ
+        float angle = rect.angle;       // Rotatedê°ì²´ì˜ íšŒì „ ê°ë„ ì•Œì•„ëƒ„
         cout << angle << endl;
 
         Point2f center = rect.center;
@@ -83,7 +83,7 @@ int main() {
     return 0;
 }
 
-// ½Ç½À°úÁ¦ 3
+// ì‹¤ìŠµê³¼ì œ 3
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -127,11 +127,11 @@ int main() {
                 circleCount++;
         }
     }
-    cout << "»ï°¢ÇüÀÇ °¹¼ö: " << triangleCount << endl;
-    cout << "»ç°¢ÇüÀÇ °¹¼ö: " << squareCount << endl;
-    cout << "¿À°¢ÇüÀÇ °¹¼ö: " << pentagonCount << endl;
-    cout << "À°°¢ÇüÀÇ °¹¼ö: " << HexagonCount << endl;
-    cout << "¿øÀÇ °¹¼ö: " << circleCount << endl;
+    cout << "ì‚¼ê°í˜•ì˜ ê°¯ìˆ˜: " << triangleCount << endl;
+    cout << "ì‚¬ê°í˜•ì˜ ê°¯ìˆ˜: " << squareCount << endl;
+    cout << "ì˜¤ê°í˜•ì˜ ê°¯ìˆ˜: " << pentagonCount << endl;
+    cout << "ìœ¡ê°í˜•ì˜ ê°¯ìˆ˜: " << HexagonCount << endl;
+    cout << "ì›ì˜ ê°¯ìˆ˜: " << circleCount << endl;
 
     Scalar color(0, 0, 255);
     drawContours(src, contours, -1, color, 2);
@@ -142,7 +142,7 @@ int main() {
     return 0;
 }
 
-// ½Ç½À°úÁ¦ 4
+// ì‹¤ìŠµê³¼ì œ 4
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -187,19 +187,19 @@ int main() {
             }
         }
     }
-    cout << "¿øÀÇ µÑ·¹ ±æÀÌ: " << circlelen << endl;
-    cout << "¿øÀÇ ¸éÀû: " << circlearea << endl;
-    cout << "»ï°¢ÇüÀÇ µÑ·¹ ±æÀÌ: " << trianglelen << endl;
-    cout << "»ï°¢ÇüÀÇ ¸éÀû: " << trianglearea << endl;
-    cout << "»ç°¢ÇüÀÇ µÑ·¹ ±æÀÌ: " << rectlen << endl;
-    cout << "»ç°¢ÇüÀÇ ¸éÀû: " << rectarea << endl;
+    cout << "ì›ì˜ ë‘˜ë ˆ ê¸¸ì´: " << circlelen << endl;
+    cout << "ì›ì˜ ë©´ì : " << circlearea << endl;
+    cout << "ì‚¼ê°í˜•ì˜ ë‘˜ë ˆ ê¸¸ì´: " << trianglelen << endl;
+    cout << "ì‚¼ê°í˜•ì˜ ë©´ì : " << trianglearea << endl;
+    cout << "ì‚¬ê°í˜•ì˜ ë‘˜ë ˆ ê¸¸ì´: " << rectlen << endl;
+    cout << "ì‚¬ê°í˜•ì˜ ë©´ì : " << rectarea << endl;
 
     imshow("src", src);
     waitKey();
     return 0;
 }
 
-// ½Ç½À°úÁ¦ 5
+// ì‹¤ìŠµê³¼ì œ 5
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
@@ -218,10 +218,10 @@ int main(void) {
     vector<vector<Point>> contours;
     findContours(tmp, contours, RETR_EXTERNAL, CHAIN_APPROX_NONE);
 
-    double length_c = arcLength(contours[0], false);  // ¿Ü°¢¼± ±æÀÌ
-    double cir = contourArea(contours[0], false);      // ¿Ü°¢¼± ¸éÀû
-    cout << "¿øÀÇ µÑ·¹ ±æÀÌ : " << length_c << endl;
-    cout << "¿øÀÇ ¸éÀû : " << cir << endl;
+    double length_c = arcLength(contours[0], false);  // ì™¸ê°ì„  ê¸¸ì´
+    double cir = contourArea(contours[0], false);      // ì™¸ê°ì„  ë©´ì 
+    cout << "ì›ì˜ ë‘˜ë ˆ ê¸¸ì´ : " << length_c << endl;
+    cout << "ì›ì˜ ë©´ì  : " << cir << endl;
 
     drawContours(img, contours, 0, Scalar(0, 0, 255), 2);
 
@@ -233,11 +233,11 @@ int main(void) {
         line(dst, approx[j], approx[(j + 1) % approx.size()], Scalar(255, 0, 0), 2);
     }
 
-    double close_c = arcLength(approx, false);          // ±Ù»çÈ­µÈ ¿Ü°¢¼± ±æÀÌ
-    double close_cir = contourArea(approx, false);      // ±Ù»çÈ­µÈ ¿Ü°¢¼± ¸éÀû
+    double close_c = arcLength(approx, false);          // ê·¼ì‚¬í™”ëœ ì™¸ê°ì„  ê¸¸ì´
+    double close_cir = contourArea(approx, false);      // ê·¼ì‚¬í™”ëœ ì™¸ê°ì„  ë©´ì 
 
-    cout << "±Ù»çÈ­µÈ µÑ·¹ ±æÀÌ : " << close_c << endl;
-    cout << "±Ù»çÈ­µÈ ¸éÀû : " << close_cir << endl;
+    cout << "ê·¼ì‚¬í™”ëœ ë‘˜ë ˆ ê¸¸ì´ : " << close_c << endl;
+    cout << "ê·¼ì‚¬í™”ëœ ë©´ì  : " << close_cir << endl;
 
     imshow("img", img);
     imshow("tmp", tmp);
