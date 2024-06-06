@@ -249,7 +249,21 @@
 
 실습과제 5)
 
-● 
+● 이미지 그레이스케일, 이진화 변환
+
+● 외곽선 검출 (RETR_EXTERNAL은 외곽선을 검출할 때 최외곽선만 찾도록 하며, CHAIN_APPROX_NONE은 모든 점을 저장)
+
+● 외곽선 길이와 면적 계산 및 출력
+
+● approxPolyDP함수는 주어진 외곽선을 근사화하여 다각형으로 만듬. 여기서 0.02는 근사화 정확도를 결정하는 매개변수
+
+● 근사화된 외곽선 길이와 면적 계산 및 출력
+
+<img width="361" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/04397f44-8d2d-4740-8c7b-4f9ee2e88111">
+
+<img width="865" alt="image" src="https://github.com/smHan22/opencv_ch12/assets/90818408/d46dbfb6-32a0-486a-98c6-76bc5cecac1b">
+
+
 
 
 
